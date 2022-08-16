@@ -14,7 +14,7 @@ variable "cluster_service_ipv4_cidr" {
 variable "cluster_version" {
   description = "EKS version"
   type = string
-  default     = null
+  default     = "1.23"
 }
 
 variable "cluster_endpoint_private_access" {
