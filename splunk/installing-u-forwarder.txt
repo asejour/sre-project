@@ -1,0 +1,29 @@
+Installattion
+
+download universal forwarder
+https://www.splunk.com/en_us/download/universal-forwarder.html?locale=en_us
+in my case i choose 64bit
+---
+sudo wget -O splunkforwarder-9.0.1-82c987350fde-Linux-x86_64.tgz "https://download.splunk.com/products/universalforwarder/releases/9.0.1/linux/splunkforwarder-9.0.1-82c987350fde-Linux-x86_64.tgz"
+
+copy this to opt folder
+
+sudo cp splunkforwarder-9.0.1-82c987350fde-Linux-x86_64.tgz /opt/
+
+extract the compress file
+sudo tar -xvzf splunkforwarder-9.0.1-82c987350fde-Linux-x86_64.tgz
+
+go to bin folder
+cd splunkforwarder/bin/
+
+execute this command
+sudo ./splunk start --accept-license
+
+add forwarder
+sudo ./splunk add forward-server  172.31.6.53:9997
+
+add monitor
+sudo ./splunk add monitor /
+
+Restart universal forwarder
+sudo ./splunk restart
