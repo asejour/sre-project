@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'K8s', namespace: '', serverUrl: '') {
+               sh "curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.23.7/2022-06-29/bin/linux/amd64/kubectl"
+               sh "chmod u+x ./kubectl"
+               sh "./kubectl get svc"
+               sh "./kubectl create namespace srens"
+               sh "./kubectl apply -f deployment.yaml"
+               sh "./kubectl expose deployment web-deployment --type=LoadBalancer --name=my-service -n srens"
+               sh "./kubectl annotate svc my-service service.beta.kubernetes.io/aws-load-balancer-internal="true" -n srens"
+            }
+            }
+        }
+    }
+}
