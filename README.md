@@ -14,7 +14,7 @@ Install and configure the monitoring tool stack (Splunk and Dynatrace) to monito
 
 # Create EKS cluster with Terraform by using CICD (jenkins)
 
-# Push image app on ecr 
+# Push Docker image (app) on ECR AWS registry 
 
 # Deploy app on EKS
 
