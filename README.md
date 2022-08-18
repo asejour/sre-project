@@ -8,17 +8,17 @@ Post-Mortem SRE Scoped Project:
 Install and configure the monitoring tool stack (Splunk and Dynatrace) to monitor the Application and Infra which is very essential for every production software system.
 
 
-#Create 2 ec2 instances with terraform and create script file to install jenskins and splunk-server during the ec2 intances creation
+# Create 2 ec2 instances with terraform and create script file to install jenskins and splunk-server during the ec2 intances creation
 
-#Configure Jenkins App and Splunk enterprise app
+# Configure Jenkins App and Splunk enterprise app
 
-#Create EKS cluster with Terraform by using CICD (jenkins)
+# Create EKS cluster with Terraform by using CICD (jenkins)
 
-#Push image app on ecr 
+# Push image app on ecr 
 
-#Deploy app on EKS
+# Deploy app on EKS
 
-#Configure Dynatrace
+# Configure Dynatrace
 
 # Create dashboard for app and hosts by using dynatrace and splunk
   Using universal forwarders to forward log on splunk enterprise
